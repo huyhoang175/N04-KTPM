@@ -146,7 +146,7 @@
 <BR>Miêu tả về trạng thái khi kịch bản kết thúc: Hệ thống quản lí thông tin khách hàng hoạt động đúng, đáp ứng được yêu cầu và hoạt động tốt trong điều kiện đa người*
 
 ## SƠ ĐỒ USE-CASE
-![USECASE](Screenshot%202023-03-01%20144317.png)
+![USECASE](use case.png)
 
 ## TÀI LIỆU MÔ TẢ USE -CASE
 
