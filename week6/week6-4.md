@@ -126,7 +126,7 @@ Tổng kết lại, quản lý thông tin khách hàng trên website đang trở
 | Identifier Priority | Weight | Requirements                                                                                                                                                       |
 |---------------------|--------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | REQ-29              | 10     | GUI phải có trang đính(đăng nhập). ![](Login.png)|
-| REQ-30a,b           | 10     | must phải có trang chính chứa các tính năng.<BR>GUI phải có một trang xem dữ liệu.![](GUI.png) |
+| REQ-30a,b           | 10     | must phải có trang chính chứa các tính năng.<BR>GUI phải có một trang xem dữ liệu. ![](GUI.png)  |
 | REQ-31              | 10     | GUI phải có một trang để nhập dữ liệu khách hàng.  ![](import.png)                                                                |
                                                                                                              
 
