@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="dashboard.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="side-menu">
+      <div class="brand-name">
+        <h1>Management</h1>
+      </div>
+      <ul>
+          <li><img src="dashboard.png" alt="">&nbsp;Trang tổng quan</li>
+          <li><img src="customer.png" alt="">&nbsp;Danh sách khách hàng</i></li>
+          <li><img src="edit.png" alt="">&nbsp;Quản Lí khách hàng</li>
+          <li><img src="addcustomer.png" alt="">&nbsp;Thêm Khách hàng</li>
+          <li><img src="history.png" alt="">&nbsp;Lịch sử tương tác</li>
+          <li><img src="help.png" alt="">&nbsp;Help</li>
+          <li><img src="settings.png" alt="">&nbsp;Setting</li>
+
+      </ul>
+  </div>
+    <div class="container" style="min-height: 545.044px;">
+        <div class="header">
+            <div class="nav">
+                <div class="search">
+                    <input type="text" placeholder="Search..">
+                    <button type="submit"><img src="search.png" alt=""></button>
+                </div>
+                
+                <div class="user">
+                    <a href="#" class="btn">Add new</a>
+                    <img src="notifications.png" alt="">
+                    <div class="img-case">
+                        <img src="user.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+<!-- body -->
+        <section class="content">
+
+            <div class="row">
+            <div class="col-md-12 col-xs-12">
+            <div class="box">
+            <div class="box-header">
+            <h3 class="box-title">Add customer</h3>
+            </div>
+            <form role="form" action="" method="post">
+            <div class="box-body">
+            <div class="form-group">
+            </select><span class="select2 select2-container select2-container--default" dir="ltr" style="width: 1149.75px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-labelledby="select2-groups-container"><span class="select2-selection__rendered" id="select2-groups-container" title="Select Groups">Insert information</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+            </div>
+            <div class="form-group">
+            <label for="username">Customername</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+            </div>
+            <div class="form-group">
+            <label for="password">Passport</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+            <label for="cpassword">Confirm passport</label>
+            <input type="password" class="form-control" id="cpassword" name="cpassword" placeholder="Confirm Password">
+            </div>
+            <div class="form-group">
+            <label for="fname">First name</label>
+            <input type="text" class="form-control" id="fname" name="fname" placeholder="First name">
+            </div>
+            <div class="form-group">
+            <label for="lname">Last name</label>
+            <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name">
+            </div>
+            <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone">
+            </div>
+            <div class="form-group">
+            <label for="gender">Gender</label>
+            <div class="radio">
+            <label>
+            <input type="radio" name="gender" id="male" value="1">
+            Male
+            </label>
+            <label>
+            <input type="radio" name="gender" id="female" value="2">
+            Female
+            </label>
+            </div>
+            </div>
+            </div>
+            
+            <div class="box-footer">
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+            <a href="http://127.0.0.1:5500/dash.html#" class="btn btn-warning">Back</a>
+            </div>
+            </form>
+            </div>
+            
+            </div>
+            
+            </div>
+            
+            </section>
+    </div>
+  </body>
+</html>
