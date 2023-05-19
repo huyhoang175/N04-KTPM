@@ -106,10 +106,20 @@ h3{
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
+.search button:hover{
+  color: #e7e0e1;
+  background: red;
+  padding: 3px 8px;
+  border: 2px solid #f05462;
+}
+
+
 .container .header .nav .search button img{
   width: 30px;
   height: 30px;
+
 }
 .container .header .nav .user{
   flex: 1;
@@ -146,6 +156,8 @@ h3{
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+
 .container .content .cards .card{
   width: 250px;
   height: 150px;
@@ -156,6 +168,12 @@ h3{
   justify-content:  space-around;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
+}
+.container .content .cards .card:active{
+  color: #af6a74;
+  background: #f05462;
+  padding: 3px 8px;
+  border: 2px solid #f05462;
 }
 .container .content .content2{
   min-height: 60vh;
