@@ -470,10 +470,12 @@ button, input, optgroup, select, textarea {
   cursor: pointer;
 }
 
+
+
 .container .content .content2 .addcustomer{
-  min-width: 100%;
-  min-height: 60vh;
-  top:35%;
+  min-width: 80%;
+  min-height: 50vh;
+  top:40%;
   background:#fff ;
   border-radius: 6px;
   border:1px solid black;
@@ -569,7 +571,6 @@ button, input, optgroup, select, textarea {
 
 }
 
-
 .listcustomer h2 table {
   border-collapse: collapse;
   width: 100%;
@@ -583,3 +584,187 @@ th, td {
 th {
   background-color: #f2f2f2;
 }
+
+
+.manageCustomers{
+
+  min-width: 100%;
+  min-height: 70vh;
+  top:30%;
+  background:#fff ;
+  border-radius: 6px;
+  border:1px solid black;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(0.1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  visibility: hidden ;
+  transition: transform 0.4s,top 0.4s;
+}
+.manageCustomers .open-popup {
+  visibility: visible;
+  transform: translate(-50%,-50%) scale(1);
+  
+}
+.manageCustomers h2{
+  font-size: 20px;
+  text-align: left;
+  margin-top: 0;
+  padding: 10px 0;
+  border-radius:4px ;
+  border: #333;
+  cursor: pointer;
+  border-bottom: 4px solid #4e0404;
+  
+}
+.manageCustomers #button2{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: rgb(235, 12, 12);
+  font-size: 2em;
+  color:white;
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  cursor: pointer;
+  z-index: 1;
+
+}
+
+.manageCustomers h2 table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th, td {
+  text-align: left;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+  background-color: #f5f5f5;
+}
+
+.manageCustomers h2 .searchC {
+  position: absolute;
+  top: 1%;
+  width: 60vh;
+  height: 5vh;
+  right: 10%;
+  flex: 3 ;
+  display: flex;
+  justify-content: center;
+}
+ .manageCustomers  .searchC input[type = text]{
+  border: none;
+  background: #f1f1f1;
+  padding: 9px;
+  width:100%;
+  border: 0.5px solid #070707;
+
+  }
+.manageCustomers h2  #buttonSearch:hover{
+  align-items: center;
+  justify-content: center;
+  color: #e7e0e1;
+  background: red;
+  padding: 3px 3px;
+  border: 2px solid #f05462;
+} 
+
+.manageCustomers h2  #buttonSearch img{
+  width: 45px;
+  height: 20px;
+
+}
+
+
+
+  #edit-form {
+  min-width: 30%;
+  min-height: 40vh;
+  top:30%;
+  background:#fff ;
+  border-radius: 6px;
+  border:1px solid black;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,-50%) scale(1);
+  text-align: center;
+  padding: 0 30px 30px;
+  color: #333;
+  /* visibility: hidden ; */
+  transition: transform 0.4s,top 0.4s;
+}
+
+#edit-form .open-popup {
+  visibility: visible;
+  transform: translate(-50%,-50%) scale(1);
+  
+}
+#edit-form h2{
+  font-size: 20px;
+  text-align: left;
+  margin-top: 0;
+  padding: 10px 0;
+  border-radius:4px ;
+  border: #333;
+  cursor: pointer;
+  border-bottom: 4px solid #4e0404;
+}
+
+#edit-form #closeEdit{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  background: rgb(235, 12, 12);
+  font-size: 2em;
+  color:white;
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  cursor: pointer;
+  z-index: 1;
+} 
+form{
+  display: flex;
+  flex-wrap:wrap;
+  
+}
+.form-group{
+  display: flex;
+  flex-direction: column; /* thiết lập các phần tử con trong .form-group theo chiều dọc */
+  margin-right: 20px; /* khoảng cách giữa các cột */
+  margin-bottom: 20px;
+}
+#edit-form label{
+  margin-bottom: 5px;
+}
+#edit-form input , #edit-form select{
+  width: 300px;
+
+}
+#edit-form #edit-gender{
+  width: 60px;
+  margin-right: 40%;
+}
+
+#edit-form #save-button{
+  width: 45px;
+  height: 20px;
+  position: absolute; /* đặt position: absolute cho button */
+  bottom: 0; /* đặt bottom: 0 để đưa button xuống cuối cùng */
+  right: 0; /* đặt right: 0 để đưa button sang bên phải của form */
+  margin-bottom: 20px;
+
+}
+

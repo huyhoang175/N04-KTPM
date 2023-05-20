@@ -17,13 +17,13 @@
         <h1>Management</h1>
       </div>
       <ul>
-          <li><img src="../image/dashboard.png" alt="">&nbsp;Trang tổng quan</li>
+          <li id="buton" onclick="closeAll()" ><img src="../image/dashboard.png" alt="">&nbsp;Trang tổng quan</li>
           <li id ="button" onclick="openListcustomer()"><img   src="../image/customer.png"  alt="">&nbsp;Danh sách khách hàng</i></li>
-          <li><img src="../image/edit.png" alt="">&nbsp;Quản Lí khách hàng</li>
+          <li id ="button2" onclick="openMC()"><img src="../image/edit.png" alt="">&nbsp;Quản Lí khách hàng</li>
           <li onclick="openPopup()"><img src="../image/addcustomer.png" alt="">&nbsp;Thêm Khách hàng</li>
-          <li><img src="../image/history.png" alt="">&nbsp;Lịch sử tương tác</li>
+          <!-- <li><img src="../image/history.png" alt="">&nbsp;Lịch sử tương tác</li> -->
           <li><img src="../image/help.png" alt="">&nbsp;Help</li>
-          <li><img src="../image/settings.png" alt="">&nbsp;Setting</li>
+          <li ><img src="../image/settings.png" alt="">&nbsp;Setting</li>
       </ul>
   </div>
   <div class="container">
@@ -45,16 +45,16 @@
     </div>
     <div class="content">
       <div class="cards">
-        <div class="card">
+        <div class="card" id ="button" onclick="openListcustomer()">
           <div class="box">
         
-            <h3 id ="button" onclick="openListcustomer()">Danh sách khách<p> hàng</h3>
+            <h3 >Danh sách khách<p> hàng</h3>
           </div>
           <div class="icon-case">
             <img src="../image/customer1.png" alt="">
           </div>
         </div>
-        <div class="card">
+        <div class="card" id ="button2" onclick="openMC()" >
           <div class="box">
             
             <h3>Quản lý khách <p> hàng</h3>
@@ -63,14 +63,14 @@
             <img src="../image/edit1.png" alt="">
           </div>
         </div>
-        <div class="card">
+        <!-- <div class="card">
           <div class="box">
             <h3> Lịch sử tương tác<p> của khách hàng</h3>
           </div>
           <div class="icon-case">
             <img src="../image/history1.png" alt="">
           </div>
-        </div>
+        </div> -->
         <div class="card">
           <div class="box">
             <h3>Setting</h3>
@@ -82,6 +82,7 @@
         
       </div>
     <div class ="content2">
+      <!-- thêm khách hàng -->
         <div class="addcustomer" id ="addcustomer">
           <h2>Add New Customer <button id="button2" onclick="closePopup()"> <ion-icon name="close-outline"></ion-icon>
           </button></h2>
@@ -141,8 +142,8 @@
               </div>
               
               <div class="box-footer">
-              <button type="submit" class="btn btn-primary">Save Changes</button>
-              <a href="http://127.0.0.1:5500/dash.html#" class="btn btn-warning">Back</a>
+              <button id="save" class="btn btn-primary">Save Changes</button>
+              <!-- <a href="#" class="btn btn-warning">Back</a> -->
               </div>
               </form>
               </div>
@@ -155,7 +156,8 @@
 
           <!-- danh sách khách hàng -->
         <div class="listcustomer" id ="listcustomer">
-            <h2>Danh Sách Khách Hàng <button id="button" onclick="closeListcustomer()"> <ion-icon name="close-outline"></ion-icon>
+            <h2>Danh Sách Khách Hàng <button id="button
+              " onclick="closeListcustomer()"> <ion-icon name="close-outline"></ion-icon>
             </button></h2>
             <table id="customerTable">
               <thead>
@@ -167,6 +169,7 @@
                   <th id = "phone">Phone Number</th>
                 </tr>
               </thead>
+              
               <tbody>
                 
               </tbody>
@@ -176,7 +179,60 @@
         
         
         </div>
-        <div class="new-student"></div>
+
+        <!-- Quản lý khách hàng -->
+        <div class="manageCustomers" id="manageCustomer"  ><button id="button2" onclick="closeMC()"> <ion-icon name="close-outline"></ion-icon>
+        </button>
+          <h2>Quản Lý Thông Tin khách Hàng 
+            <div class="searchC">
+              <input type="text" placeholder="Search..">
+              <button id="buttonSearch" onclick="openEdit()" type="submit"><img src="../image/search.png" alt=""></button>
+            </div>
+          </h2>
+          <table id="MCtable">
+            <thead>
+              <tr>
+                <th id="name">Họ và Tên</th>
+                <th id="birtday">Ngày Sinh</th>
+                <th  id ="gender">Giới Tính</th>
+                <th id = "email">Email</th>
+                <th id = "phone">Phone Number</th>
+				        <th >Chỉnh sửa</th>  
+                
+              </tr>
+              
+            </thead>
+            <tbody id="customer-table">
+              
+            </tbody>
+            
+          </table>
+          <form id="edit-form" >
+            <div class="form-group">
+            <h2>Chỉnh sửa thông tin khách hàng <button id ="closeEdit" onclick="closeEdit()"> <ion-icon name="close-outline"></ion-icon>
+            </button></h2>
+            <input type="hidden" id="edit-id">
+            <label for="edit-name">Họ Và Tên:</label>
+            <input type="text" id="edit-name">
+            <label for="edit-dob">Ngày sinh:</label>
+            <input type="date" id="edit-dob">
+            <label  for="edit-gender">Giới tính:</label>
+            <select id="edit-gender">
+              <option value="Nam">Nam</option>
+              <option value="Nữ">Nữ</option>
+              <option value="Khác">Khác</option>
+            </select>
+            <label for="edit-email">Email:</label>
+            <input id="edit-email">
+            <label for="edit-phone">Số điện thoại:</label>
+            <input type="tel" id="edit-phone">
+            <button   type="submit" id ="save-button" onclick="closeEdit()" >Lưu</button>
+          </form>
+        </div>
+
+
+
+        </div>
     </div>
     </div>
     </div>
@@ -185,7 +241,11 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
-    <script src="data.js"></script>
+    <script src="data.js">
+      
+    </script>
+  
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
   </body>
 </html>

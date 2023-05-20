@@ -44,6 +44,104 @@ oReq.onload = function(e) {
 
     tbody.appendChild(row);
   }
+
+
+  // -------------------------------------------------------
+  
+  var customers = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+
+
+  const customerTable = document.getElementById("customer-table");
+  
+  customers.forEach(function(customer, index) {
+    const row = customerTable.insertRow();
+    const name_Cell = row.insertCell(0);
+    const dob_Cell = row.insertCell(1);
+    const gender_Cell = row.insertCell(2);
+    const email_Cell = row.insertCell(3);
+    const phone_Cell = row.insertCell(4);
+    const editCell = row.insertCell(5);
+  
+    name_Cell.innerHTML = customer[0];
+    dob_Cell.innerHTML = customer[1];
+    gender_Cell.innerHTML =customer[2];
+    email_Cell.innerHTML = customer[3];
+    phone_Cell.innerHTML = customer[4];
+  
+    const editButton = document.createElement("button");
+    
+    editButton.innerHTML = "Chỉnh sửa";
+    
+    editButton.addEventListener("click", function() {
+      showEditForm(index);
+    });
+    editCell.appendChild(editButton);
+  });
+
+  const clickButton2 = document.getElementById("button2");
+  clickButton2.addEventListener("click", function openMC() {
+
+    hideEditForm();
+  });
+
+  const clickButton = document.getElementById("edit-form");
+  
+  clickButton.addEventListener("click", function openMC() {
+
+    hideEditForm();
+  });
+
+  const editForm = document.getElementById("edit-form");
+  const editId = document.getElementById("edit-id");
+  const editName = document.getElementById("edit-name");
+  const editDob = document.getElementById("edit-dob");
+  const editGender = document.getElementById("edit-gender");
+  const editEmail = document.getElementById("edit-email");
+  const editPhone = document.getElementById("edit-phone");
+  
+  function showEditForm(index) {
+    const customer = customers[index];
+    editId.value = index;
+    editName.value = customer[0];
+    editDob.value = customer[1];
+    editGender.value = customer[2];
+    editEmail.value = customer[3];
+    editPhone.value = customer[4];
+    editForm.style.display = "block";
+  }
+  
+  editForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    const index = editId.value;
+    customers[index][0] = editName.value;
+    customers[index][1] = editDob.value;
+    customers[index][2] = editGender.value;
+    customers[index][3] = editEmail.value;
+    customers[index][4] = editPhone.value;
+    // saveData();
+    hideEditForm();
+  });
+  
+  function hideEditForm() {
+    editForm.style.display = "none";
+  }
+  
+  
+  // function saveData() {
+  //   const newWorkbook = XLSX.utils.book_new();
+  //   // const newWorksheet = XLSX.utils.aoa_to_sheet(customers);
+  //   // XLSX.utils.book_append_sheet(newWorkbook, newWorksheet, "Customers");
+  //     // Convert customers array to Sheet
+  // const newWorksheet = XLSX.utils.json_to_sheet(customers);
+  
+  // // Update workbook with new Sheet
+  // workbook.Sheets[worksheet] = newWorksheet;
+  //   XLSX.writeFile(newWorkbook, "dataCustomer.xlsx");
+  // }
+  
+
 };
+
+
 
 oReq.send();
